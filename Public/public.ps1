@@ -28,7 +28,7 @@ http://www.fabrikam.com/extension.html
 Set-Item
 #>
 
-function Verb-Noun {
+function Test-Function {
     [CmdletBinding()]
     Param (
         # Help description for Param 1.

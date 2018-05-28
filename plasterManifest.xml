@@ -38,13 +38,18 @@
   <content>
         <message>&#10;&#10;Scaffolding your PowerShell Module...&#10;&#10;&#10;</message>
 
-        <templateFile source='build.psake.ps1'
-                      destination='${PLASTER_PARAM_ModuleName}\build.psake.ps1'
-                      openInEditor="true"/>
+        <file condition="$PLASTER_PARAM_Editor -eq 'VSCode'"
+              source='editor\VSCode\launch.json'
+              destination='${PLASTER_PARAM_ModuleName}\.vscode\launch.json' />
+              
+        <file condition="$PLASTER_PARAM_Editor -eq 'VSCode'"
+              source='editor\VSCode\settings.json'
+              destination='${PLASTER_PARAM_ModuleName}\.vscode\settings.json' />
 
-        <templateFile source='build.settings.ps1'
-                      destination='${PLASTER_PARAM_ModuleName}\build.settings.ps1'
-                      openInEditor="true"/>
+        <file condition="$PLASTER_PARAM_Editor -eq 'VSCode'"
+              source='editor\VSCode\tasks.json'
+              destination='${PLASTER_PARAM_ModuleName}\.vscode\tasks.json' />
+
 
         <newModuleManifest destination='${PLASTER_PARAM_ModuleName}\${PLASTER_PARAM_ModuleName}\${PLASTER_PARAM_ModuleName}.psd1'
                            moduleVersion='$PLASTER_PARAM_Version'
@@ -56,9 +61,18 @@
               destination='${PLASTER_PARAM_ModuleName}\${PLASTER_PARAM_ModuleName}\${PLASTER_PARAM_ModuleName}.psm1'
               openInEditor="true"/>
 
+        <templateFile source='Private\private.ps1'
+                      destination='${PLASTER_PARAM_ModuleName}\${PLASTER_PARAM_ModuleName}\Private\Private.Helper.ps1' />           
 
+        <templateFile source='Public\public.ps1'
+                      destination='${PLASTER_PARAM_ModuleName}\${PLASTER_PARAM_ModuleName}\Public\Test-Function.ps1' />
+        
+        
         <templateFile source='test\Module_Help.Tests.ps1'
                       destination='${PLASTER_PARAM_ModuleName}\test\Module_Help.Tests.ps1' />
+        
+        <templateFile source='test\PublicFunc.Tests.ps1'
+                      destination='${PLASTER_PARAM_ModuleName}\test\PublicFunc.Tests.ps1' />
 
         <templateFile source='test\Public\Public.Tests.ps1'
                       destination='${PLASTER_PARAM_ModuleName}\test\Public\Public.Tests.ps1' />
@@ -66,19 +80,14 @@
         <templateFile source='test\Private\Private.Tests.ps1'
                       destination='${PLASTER_PARAM_ModuleName}\test\Private\Private.Tests.ps1' />
         
-        <templateFile source='Public\public.ps1'
-                      destination='${PLASTER_PARAM_ModuleName}\${PLASTER_PARAM_ModuleName}\Public\Public.ps1' />
-        
-        <templateFile source='Private\private.ps1'
-                      destination='${PLASTER_PARAM_ModuleName}\${PLASTER_PARAM_ModuleName}\Private\Private.Helper.ps1' />           
 
-        <file condition="$PLASTER_PARAM_Editor -eq 'VSCode'"
-              source='editor\VSCode\settings.json'
-              destination='${PLASTER_PARAM_ModuleName}\.vscode\settings.json' />
+        <templateFile source='build.psake.ps1'
+                      destination='${PLASTER_PARAM_ModuleName}\build.psake.ps1'
+                      openInEditor="true"/>
 
-        <file condition="$PLASTER_PARAM_Editor -eq 'VSCode'"
-              source='editor\VSCode\tasks.json'
-              destination='${PLASTER_PARAM_ModuleName}\.vscode\tasks.json' />
+        <templateFile source='build.settings.ps1'
+                      destination='${PLASTER_PARAM_ModuleName}\build.settings.ps1'
+                      openInEditor="true"/>
 
         <requireModule name="Pester" minimumVersion="4.0.3"
             message="Without Pester, you will not be able to run the provided Pester test to validate your module manifest file.`nWithout version 4.0.3, VS Code will not display Pester warnings and errors in the Problems panel."/>
