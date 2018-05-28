@@ -12,7 +12,7 @@ if (Get-Module $ModuleName) {
 }
 Import-Module $ModulePath
 
-Describe 'Checks File/Function Names'{
+Describe 'Check Public File/Function Names'{
     
         
     # Get a list of .ps1 files in the module Public folder.
