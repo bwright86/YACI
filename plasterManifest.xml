@@ -61,6 +61,9 @@
               destination='${PLASTER_PARAM_ModuleName}\${PLASTER_PARAM_ModuleName}\${PLASTER_PARAM_ModuleName}.psm1'
               openInEditor="true"/>
 
+        <templateFile source='Classes\Class.ps1'
+                      destination='${PLASTER_PARAM_ModuleName}\${PLASTER_PARAM_ModuleName}\Classes\Class.ps1' />           
+
         <templateFile source='Private\private.ps1'
                       destination='${PLASTER_PARAM_ModuleName}\${PLASTER_PARAM_ModuleName}\Private\Private.Helper.ps1' />           
 

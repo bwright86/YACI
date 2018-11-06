@@ -3,11 +3,12 @@
 
 
 #Get public and private function definition files.
+$Classes = @( Get-ChildItem -Path $PSScriptRoot\Classes\*.ps1 -ErrorAction SilentlyContinue )
 $Public  = @( Get-ChildItem -Path $PSScriptRoot\Public\*.ps1 -ErrorAction SilentlyContinue )
 $Private = @( Get-ChildItem -Path $PSScriptRoot\Private\*.ps1 -ErrorAction SilentlyContinue )
 
 #Dot source the files
-Foreach($import in @($Public + $Private))
+Foreach($import in @($Classes + $Public + $Private))
 {
     Try
     {
@@ -15,7 +16,7 @@ Foreach($import in @($Public + $Private))
     }
     Catch
     {
-        Write-Error -Message "Failed to import function $($import.fullname): $_"
+        Write-Error -Message "Failed to import function/class $($import.fullname): $_"
     }
 }
 
