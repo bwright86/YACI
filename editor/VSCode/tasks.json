@@ -40,15 +40,15 @@
     // Associate with test task runner
     "tasks": [
         {
-            "taskName": "Clean",
+            "label": "Clean",
             "type": "shell",
-            "command": "Invoke-psake build.psake.ps1 -taskList Clean",
+            "command": "Invoke-psake psakeBuild.ps1 -taskList Clean",
             "problemMatcher": []
         },
         {
-            "taskName": "Build",
+            "label": "Build",
             "type": "shell",
-            "command": "Invoke-psake build.psake.ps1 -taskList Build",
+            "command": "Invoke-psake psakeBuild.ps1 -taskList Build",
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -56,33 +56,33 @@
             "problemMatcher": []
         },
         {
-            "taskName": "BuildHelp",
+            "label": "BuildHelp",
             "type": "shell",
-            "command": "Invoke-psake build.psake.ps1 -taskList BuildHelp",
+            "command": "Invoke-psake psakeBuild.ps1 -taskList BuildHelp",
             "problemMatcher": []
         },
         {
-            "taskName": "Analyze",
+            "label": "Analyze",
             "type": "shell",
-            "command": "Invoke-psake build.psake.ps1 -taskList Analyze",
+            "command": "Invoke-psake psakeBuild.ps1 -taskList Analyze",
             "problemMatcher": []
         },
         {
-            "taskName": "Install",
+            "label": "Install",
             "type": "shell",
-            "command": "Invoke-psake build.psake.ps1 -taskList Install",
+            "command": "Invoke-psake psakeBuild.ps1 -taskList Install",
             "problemMatcher": []
         },
         {
-            "taskName": "Publish",
+            "label": "Publish",
             "type": "shell",
-            "command": "Invoke-psake build.psake.ps1 -taskList Publish",
+            "command": "Invoke-psake psakeBuild.ps1 -taskList Publish",
             "problemMatcher": []
         },
         {
-            "taskName": "Test",
+            "label": "Test",
             "type": "shell",
-            "command": "Invoke-psake build.psake.ps1 -taskList Test",
+            "command": "Invoke-psake psakeBuild.ps1 -taskList Test",
             "group": {
                 "kind": "test",
                 "isDefault": true

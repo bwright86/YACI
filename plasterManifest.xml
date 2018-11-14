@@ -84,12 +84,16 @@
                       destination='${PLASTER_PARAM_ModuleName}\test\Private\Private.Tests.ps1' />
         
 
-        <templateFile source='build.psake.ps1'
+        <!-- <templateFile source='build.psake.ps1'
                       destination='${PLASTER_PARAM_ModuleName}\build.psake.ps1'
                       openInEditor="true"/>
 
         <templateFile source='build.settings.ps1'
                       destination='${PLASTER_PARAM_ModuleName}\build.settings.ps1'
+                      openInEditor="true"/> -->
+                      
+        <templateFile source='psakeBuild.ps1'
+                      destination='${PLASTER_PARAM_ModuleName}\psakeBuild.ps1'
                       openInEditor="true"/>
 
         <requireModule name="Pester" minimumVersion="4.0.3"
