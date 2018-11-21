@@ -5,11 +5,16 @@ properties {
 
     $codeCoverageEnabled = $true
     $codeCoverageFiles = @(
-        "$PSScriptRoot/OVFHelper/Classes/*.ps1",
-        "$PSScriptRoot/OVFHelper/Private/*.ps1",
-        "$PSScriptRoot/OVFHelper/Public/*.ps1")
+        "$PSScriptRoot/<%=$PLASTER_PARAM_ModuleName%>/Classes/*.ps1",
+        "$PSScriptRoot/<%=$PLASTER_PARAM_ModuleName%>/Private/*.ps1",
+        "$PSScriptRoot/<%=$PLASTER_PARAM_ModuleName%>/Public/*.ps1")
 
     $testRootDir = "$projectRoot/test"
+
+    # Properties for publishing the module.
+    # Uncomment lines to update them from the default.
+    #$psRepository = 'PSGallery'
+    #$psRepositoryApiKey = $env:PSGALLERY_API_KEY
 }
 
 Import-Module PowerShellBuild
