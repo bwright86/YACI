@@ -1,4 +1,4 @@
-# Shamelessly borrowed from Rambling Cookie Monster. Link here:
+# Borrowed with love from Rambling Cookie Monster. Link here:
 # https://github.com/RamblingCookieMonster/PSStackExchange/blob/db1277453374cb16684b35cf93a8f5c97288c41f/PSStackExchange/PSStackExchange.psm1
 
 

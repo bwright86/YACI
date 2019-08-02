@@ -5,7 +5,7 @@
   <metadata>
     <name>NewPowerShellScriptModule</name>
     <id>2a7c3f58-4a45-4d55-9b07-753ac7608114</id>
-    <version>1.2.0</version>
+    <version>1.1.0</version>
     <title>New PowerShell Manifest Module</title>
     <description>Creates files for a simple, non-shared PowerShell script module.</description>
     <author>Plaster</author>
@@ -56,6 +56,7 @@
 
 
         <newModuleManifest destination='${PLASTER_PARAM_ModuleName}\${PLASTER_PARAM_ModuleName}\${PLASTER_PARAM_ModuleName}.psd1'
+                           Description='$PLASTER_PARAM_Description'
                            moduleVersion='$PLASTER_PARAM_Version'
                            rootModule='${PLASTER_PARAM_ModuleName}.psm1'
                            encoding='UTF8-NoBOM'
@@ -86,15 +87,7 @@
 
         <templateFile source='test\Private\Private.Tests.ps1'
                       destination='${PLASTER_PARAM_ModuleName}\test\Private\Private.Tests.ps1' />
-        
-
-        <!-- <templateFile source='build.psake.ps1'
-                      destination='${PLASTER_PARAM_ModuleName}\build.psake.ps1'
-                      openInEditor="true"/>
-
-        <templateFile source='build.settings.ps1'
-                      destination='${PLASTER_PARAM_ModuleName}\build.settings.ps1'
-                      openInEditor="true"/> -->
+                      
                       
         <templateFile source='TemplateFiles\psakeBuild.ps1'
                       destination='${PLASTER_PARAM_ModuleName}\psakeBuild.ps1'

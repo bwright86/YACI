@@ -1,15 +1,19 @@
 properties {
     # These settings overwrite values supplied form the PowerShellBuild
     # module and govern how those tasks are executed
-    $scriptAnalysisEnabled = $true
+    $PSBPreference.Test.ScriptAnalysis.Enabled = $true
 
-    $codeCoverageEnabled = $true
-    $codeCoverageFiles = @(
+    $PSBPreference.Test.CodeCoverage.Enabled = $true
+    $PSBPreference.Test.CodeCoverage.Files = @(
         "$PSScriptRoot/OVFHelper/Classes/*.ps1",
         "$PSScriptRoot/OVFHelper/Private/*.ps1",
         "$PSScriptRoot/OVFHelper/Public/*.ps1")
 
-    $testRootDir = "$projectRoot/test"
+    $PSBPreference.Test.RootDir = "$projectRoot/test"
+
+    # Uncomment lines to publish to a different repository.
+    #$PSBPreference.Publish.PSRepositoryCredential = "PSGallery"
+    #$PSBPreference.Publish.PSRepositoryApiKey = $env:PSGALLERY_API_KEY
 }
 
 Import-Module PowerShellBuild
