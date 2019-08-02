@@ -17,6 +17,7 @@ The tests that are included will test the following things:
 - VSCode tasks depend on psake to run various build tasks, and this is abstracted with the PowershellBuild module, simplifying the build task scripts.
 
 ## Notable Mentions
+
 Some of the files have been borrowed and slightly modified from other projects, below are links to the original projects:
 
 - Module.psm1 - Warren F. (@psCookieMonster) ([Link](https://github.com/RamblingCookieMonster/PSStackExchange/commit/db1277453374cb16684b35cf93a8f5c97288c41f))
