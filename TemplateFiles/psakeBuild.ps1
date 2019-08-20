@@ -1,20 +1,23 @@
 properties {
     # These settings overwrite values supplied form the PowerShellBuild
     # module and govern how those tasks are executed
-    $scriptAnalysisEnabled = $true
+    $PSBPreference.Test.ScriptAnalysis.Enabled = $true
 
-    $codeCoverageEnabled = $true
-    $codeCoverageFiles = @(
-        "$PSScriptRoot/<%=$PLASTER_PARAM_ModuleName%>/Classes/*.ps1",
-        "$PSScriptRoot/<%=$PLASTER_PARAM_ModuleName%>/Private/*.ps1",
-        "$PSScriptRoot/<%=$PLASTER_PARAM_ModuleName%>/Public/*.ps1")
+    # Pester code-coverage settings
+    $PSBPreference.Test.CodeCoverage.Enabled = $true
+    $PSBPreference.Test.CodeCoverage.Files = @(
+        "$PSScriptRoot/OVFHelper/Classes/*.ps1",
+        "$PSScriptRoot/OVFHelper/Private/*.ps1",
+        "$PSScriptRoot/OVFHelper/Public/*.ps1")
+    #$PSBPreference.Test.CodeCoverage.Threshold = .75
 
-    $testRootDir = "$projectRoot/test"
+    # Location of the test files for module.
+    $PSBPreference.Test.RootDir = "$projectRoot/test"
 
-    # Properties for publishing the module.
-    # Uncomment lines to update them from the default.
-    #$psRepository = 'PSGallery'
-    #$psRepositoryApiKey = $env:PSGALLERY_API_KEY
+
+    # Uncomment lines to publish to a different repository.
+    #$PSBPreference.Publish.PSRepositoryCredential = "PSGallery"
+    #$PSBPreference.Publish.PSRepositoryApiKey = $env:PSGALLERY_API_KEY
 }
 
 Import-Module PowerShellBuild
