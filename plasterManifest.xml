@@ -16,7 +16,7 @@
                    type='text'
                    prompt='Enter the name of the module'/>
         
-        <parameter name="Description"
+        <parameter name="ModuleDescription"
                    type="text"
                    prompt="Enter a description for your module"/>
 
@@ -56,7 +56,7 @@
 
 
         <newModuleManifest destination='${PLASTER_PARAM_ModuleName}\${PLASTER_PARAM_ModuleName}\${PLASTER_PARAM_ModuleName}.psd1'
-                           Description='$PLASTER_PARAM_Description'
+                           description='$PLASTER_PARAM_ModuleDescription'
                            moduleVersion='$PLASTER_PARAM_Version'
                            rootModule='${PLASTER_PARAM_ModuleName}.psm1'
                            encoding='UTF8-NoBOM'
